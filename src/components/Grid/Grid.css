@@ -1,0 +1,52 @@
+.grid {
+  width: 75vw;
+  padding: 0vw 2.5vw;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  background: gold;
+  box-shadow: 4px 4px 0px goldenrod;
+}
+
+
+.grid__column {
+  display: flex;
+  flex-flow: column nowrap;
+  flex-direction: column-reverse;
+  padding-top: 20px;
+}
+
+.grid__slot {
+  width: 10vw;
+  height: 10vw;
+  border: 5px solid gold;
+  border-radius: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+.grid__slot,
+.grid__slot--player-1,
+.grid__slot--player-2 {
+  width: 10vw;
+  height: 10vw;
+  border: 5px solid gold;
+  border-radius: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+.grid__slot {
+  background: white;
+  box-shadow: -2px -4px 1px goldenrod inset;
+}
+
+.grid__slot--player-1 {
+  background: red;
+  box-shadow: 0px 0px 10px darkred inset;
+}
+
+.grid__slot--player-2 {
+  background: dodgerblue;
+  box-shadow: 0px 0px 10px darkslategray inset;
+}
