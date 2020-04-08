@@ -3,11 +3,6 @@ import React from 'react';
 import { Grid } from '../../components';
 
 export default class Game extends React.Component {
-
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <main>
@@ -16,5 +11,4 @@ export default class Game extends React.Component {
       </main>
     )
   }
-
 }
