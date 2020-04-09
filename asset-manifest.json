@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/four-in-a-row/static/css/main.9a5ee611.chunk.css",
+    "main.js": "/four-in-a-row/static/js/main.5db557bc.chunk.js",
+    "main.js.map": "/four-in-a-row/static/js/main.5db557bc.chunk.js.map",
+    "runtime-main.js": "/four-in-a-row/static/js/runtime-main.691649ed.js",
+    "runtime-main.js.map": "/four-in-a-row/static/js/runtime-main.691649ed.js.map",
+    "static/js/2.ba9a3998.chunk.js": "/four-in-a-row/static/js/2.ba9a3998.chunk.js",
+    "static/js/2.ba9a3998.chunk.js.map": "/four-in-a-row/static/js/2.ba9a3998.chunk.js.map",
+    "index.html": "/four-in-a-row/index.html",
+    "precache-manifest.bde5a1d9b2dbcdd7b9093d4cdf619b57.js": "/four-in-a-row/precache-manifest.bde5a1d9b2dbcdd7b9093d4cdf619b57.js",
+    "service-worker.js": "/four-in-a-row/service-worker.js",
+    "static/css/main.9a5ee611.chunk.css.map": "/four-in-a-row/static/css/main.9a5ee611.chunk.css.map",
+    "static/js/2.ba9a3998.chunk.js.LICENSE.txt": "/four-in-a-row/static/js/2.ba9a3998.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.691649ed.js",
+    "static/js/2.ba9a3998.chunk.js",
+    "static/css/main.9a5ee611.chunk.css",
+    "static/js/main.5db557bc.chunk.js"
+  ]
+}
