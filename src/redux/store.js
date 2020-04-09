@@ -6,14 +6,12 @@ import {
   PLAYER_1,
   createNewGrid,
   addTokenToColumn,
-  togglePlayer,
-  getColumnFreeSlotIndices
+  togglePlayer
 } from './GameUtils';
 
 const initialState = () => ({
   grid: createNewGrid(),
-  currentPlayer: PLAYER_1,
-  columnFreeSlotIndices: [0, 0, 0, 0, 0, 0, 0]
+  currentPlayer: PLAYER_1
 })
 
 const reducer = ( state = initialState(), action ) => {
@@ -23,12 +21,10 @@ const reducer = ( state = initialState(), action ) => {
       const { currentPlayer } = state;
       const newGrid = addTokenToColumn( column, currentPlayer, state.grid );
       const newPlayer = togglePlayer( state.currentPlayer );
-      const newColumnIndices = getColumnFreeSlotIndices( column, state.columnFreeSlotIndices, newGrid );
       return {
         ...state,
         currentPlayer: newPlayer,
-        grid: newGrid,
-        columnFreeSlotIndices: newColumnIndices
+        grid: newGrid
       };
     }
     case RESET_GAME: {
