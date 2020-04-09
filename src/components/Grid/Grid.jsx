@@ -5,7 +5,7 @@ import './Grid.css';
 import { playMove } from '../../redux/actions';
 import { PLAYER_1, PLAYER_2 , EMPTY } from '../../GameUtils';
 
-class Grid extends React.Component {
+export class Grid extends React.Component {
 
   handleColumnClick( index ) {
     const column = this.props.grid[ index ];
