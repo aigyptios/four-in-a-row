@@ -7,7 +7,7 @@ import {
   createNewGrid,
   addTokenToColumn,
   togglePlayer
-} from './GameUtils';
+} from '../GameUtils';
 
 const initialState = () => ({
   grid: createNewGrid(),

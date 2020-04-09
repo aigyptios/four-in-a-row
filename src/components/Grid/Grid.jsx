@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { playMove } from '../../redux/actions';
 
-import { PLAYER_1, PLAYER_2 , EMPTY } from '../../redux/GameUtils';
+import { PLAYER_1, PLAYER_2 , EMPTY } from '../../GameUtils';
 
 class Grid extends React.Component {
 
