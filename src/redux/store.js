@@ -2,21 +2,28 @@ import { createStore } from 'redux';
 
 import { RESET_GAME, PLAY_MOVE } from './actions';
 
-import * as GameUtils from './GameUtils';
+import {
+  PLAYER_1,
+  createNewGrid,
+  addTokenToColumn,
+  togglePlayer,
+  getColumnFreeSlotIndices
+} from './GameUtils';
 
 const initialState = () => ({
-  grid: GameUtils.createNewGrid(),
-  currentPlayer: GameUtils.PLAYER_1,
+  grid: createNewGrid(),
+  currentPlayer: PLAYER_1,
   columnFreeSlotIndices: [0, 0, 0, 0, 0, 0, 0]
 })
 
 const reducer = ( state = initialState(), action ) => {
   switch( action.type ) {
     case PLAY_MOVE: {
-      const { player, column } = action.payload;
-      const newGrid = GameUtils.addTokenToColumn( column, player, state.grid );
-      const newPlayer = GameUtils.togglePlayer( state.currentPlayer );
-      const newColumnIndices = GameUtils.getColumnFreeSlotIndices( column, state.columnFreeSlotIndices, newGrid );
+      const { column } = action.payload;
+      const { currentPlayer } = state;
+      const newGrid = addTokenToColumn( column, currentPlayer, state.grid );
+      const newPlayer = togglePlayer( state.currentPlayer );
+      const newColumnIndices = getColumnFreeSlotIndices( column, state.columnFreeSlotIndices, newGrid );
       return {
         ...state,
         currentPlayer: newPlayer,

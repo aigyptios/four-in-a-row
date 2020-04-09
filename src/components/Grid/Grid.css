@@ -1,8 +1,7 @@
 .grid {
-  width: 75vw;
   padding: 0vw 2.5vw;
   margin: 0 auto;
-  display: flex;
+  display: inline-flex;
   flex-flow: row nowrap;
   background: gold;
   box-shadow: 4px 4px 0px goldenrod;
@@ -14,6 +13,7 @@
   flex-flow: column nowrap;
   flex-direction: column-reverse;
   padding-top: 20px;
+  cursor: pointer;
 }
 
 .grid__slot {

@@ -1,9 +1,8 @@
 export const PLAY_MOVE = '[GAME] Play Move';
-export const playMove = (column, player) => ({
+export const playMove = (column) => ({
   type: PLAY_MOVE,
   payload: {
-    column,
-    player
+    column
   }
 });
 

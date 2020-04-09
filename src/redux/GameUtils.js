@@ -36,12 +36,15 @@ export const addTokenToColumn = (column, player, initialGrid) => {
 export const togglePlayer = (player) => {
   return (
     player === PLAYER_1 ? PLAYER_2 : 
-    player === PLAYER_2 ? PLAYER_2 :
+    player === PLAYER_2 ? PLAYER_1 :
     EMPTY
   );
 }
 
 // Pure
-export const getColumnFreeSlotIndices = (column, initialGrid) => {
-  return initialGrid[ column ].indexOf( EMPTY );
+export const getColumnFreeSlotIndices = (column, initialIndices, grid) => {
+  const newIndex = grid[ column ].indexOf( EMPTY );
+  const newIndicesArray = [ ...initialIndices ];
+  newIndicesArray[column] = newIndex;
+  return newIndicesArray;
 }
