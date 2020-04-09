@@ -2,6 +2,8 @@
 
 A simple ["Connect Four"](https://en.wikipedia.org/wiki/Connect_Four) game implemented using React and Redux.
 
+Live example: https://aigyptios.github.io/four-in-a-row/
+
 Players take turns adding their tokens to the grid until four tokens of the same color connect in a straight line horizontally, vertically, or diagonally. The player of the color of the connected tokens wins.
 
 ## Work
