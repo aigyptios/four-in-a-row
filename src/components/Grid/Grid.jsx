@@ -16,17 +16,20 @@ class Grid extends React.Component {
   }
 
   render() {
-    const { grid } = this.props;
+    const { grid, currentPlayer } = this.props;
     return (
-      <div className='grid'>
+      <div className={( 
+        currentPlayer === PLAYER_1 ? 'grid--player-1' : 
+        currentPlayer === PLAYER_2 ? 'grid--player-2' : 'grid'
+      )}>
         {
           grid.map(( column, index ) => (
             <div className='grid__column' key={ index } onClick={ this.handleColumnClick.bind( this, index ) }>
               {
-                column.map(( token, row ) => (
+                column.map(( slot, row ) => (
                   <div key={ row } className={
-                    token === PLAYER_1 ? 'grid__slot--player-1' : 
-                    token === PLAYER_2 ? 'grid__slot--player-2' : 
+                    slot === PLAYER_1 ? 'grid__slot--player-1' : 
+                    slot === PLAYER_2 ? 'grid__slot--player-2' : 
                     'grid__slot'
                   }></div>
                 ))
@@ -41,7 +44,8 @@ class Grid extends React.Component {
 }
 
 const mapStateToProps = ( state ) => ({
-  grid: state.grid
+  grid: state.grid,
+  currentPlayer: state.currentPlayer
 });
 
 const mapDispatchToProps = ( dispatch ) => ({

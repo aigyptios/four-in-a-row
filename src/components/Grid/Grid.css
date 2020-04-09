@@ -1,4 +1,6 @@
-.grid {
+.grid,
+.grid--player-1,
+.grid--player-2 {
   padding: 0vw 2.5vw;
   margin: 0 auto;
   display: inline-flex;
@@ -7,13 +9,26 @@
   box-shadow: 4px 4px 0px goldenrod;
 }
 
-
 .grid__column {
   display: flex;
   flex-flow: column nowrap;
   flex-direction: column-reverse;
   padding-top: 20px;
   cursor: pointer;
+}
+
+.grid--player-1 .grid__column:hover .grid__slot:first-of-type,
+.grid--player-1 .grid__column:hover .grid__slot--player-1 + .grid__slot,
+.grid--player-1 .grid__column:hover .grid__slot--player-2 + .grid__slot {
+  background: #f9b0b0;
+  box-shadow: 0px 0px 10px #ce8585 inset;
+}
+
+.grid--player-2 .grid__column:hover .grid__slot:first-of-type,
+.grid--player-2 .grid__column:hover .grid__slot--player-1 + .grid__slot,
+.grid--player-2 .grid__column:hover .grid__slot--player-2 + .grid__slot {
+  background: #aed7ff;
+  box-shadow: 0px 0px 10px slategray inset;
 }
 
 .grid__slot {
