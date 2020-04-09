@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import './Game.css';
 import { resetGame } from '../../redux/actions';
-
 import { Grid } from '../../components';
 
-class Game extends React.Component {
+export class Game extends React.Component {
   render() {
     return (
       <main>

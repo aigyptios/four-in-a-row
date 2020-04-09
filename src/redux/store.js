@@ -9,12 +9,12 @@ import {
   togglePlayer
 } from '../GameUtils';
 
-const initialState = () => ({
+export const initialState = () => ({
   grid: createNewGrid(),
   currentPlayer: PLAYER_1
 })
 
-const reducer = ( state = initialState(), action ) => {
+export const reducer = ( state = initialState(), action ) => {
   switch( action.type ) {
     case PLAY_MOVE: {
       const { column } = action.payload;

@@ -40,11 +40,3 @@ export const togglePlayer = (player) => {
     EMPTY
   );
 }
-
-// Pure
-export const getColumnFreeSlotIndices = (column, initialIndices, grid) => {
-  const newIndex = grid[ column ].indexOf( EMPTY );
-  const newIndicesArray = [ ...initialIndices ];
-  newIndicesArray[column] = newIndex;
-  return newIndicesArray;
-}

@@ -1,9 +1,8 @@
 import React from 'react';
-import './Grid.css';
 import { connect } from 'react-redux';
 
+import './Grid.css';
 import { playMove } from '../../redux/actions';
-
 import { PLAYER_1, PLAYER_2 , EMPTY } from '../../GameUtils';
 
 class Grid extends React.Component {

@@ -1,3 +1,20 @@
+# Four in a Row
+
+A simple ["Connect Four"](https://en.wikipedia.org/wiki/Connect_Four) game implemented using React and Redux.
+
+Players take turns adding their tokens to the grid until four tokens of the same color connect in a straight line horizontally, vertically, or diagonally. The player of the color of the connected tokens wins.
+
+## Work
+
+The implementation was written in around 4-5 hours (not in one direct sitting). Tests were written after the initial time ( 😅) as well as this README and the github pages site associated with this repository.
+
+## To do
+
+- More code coverage
+- Implement a "game won" detection algorithm
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
