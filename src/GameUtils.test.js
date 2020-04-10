@@ -5,7 +5,8 @@ import {
   createNewGrid,
   addTokenToColumn,
   togglePlayer,
-  getColumnFreeSlotIndices
+  getColumnFreeSlotIndices,
+  gridWinner
 } from './GameUtils';
 
 describe('GameUtils', ()=> {
@@ -61,6 +62,58 @@ describe('GameUtils', ()=> {
     expect( togglePlayer( PLAYER_1 ) ).toEqual( PLAYER_2 );
     expect( togglePlayer( PLAYER_2 ) ).toEqual( PLAYER_1 );
     expect( togglePlayer( undefined ) ).toEqual( EMPTY );
+  });
+
+  test('It should detect a winning column', () => {
+    const grid = [
+      [ PLAYER_2, PLAYER_2, PLAYER_2, PLAYER_2, EMPTY, EMPTY ],
+      [ PLAYER_1, EMPTY,    EMPTY,    EMPTY,    EMPTY, EMPTY ],
+      [ PLAYER_1, EMPTY,    EMPTY,    EMPTY,    EMPTY, EMPTY ],
+      [ PLAYER_1, PLAYER_1, EMPTY,    EMPTY,    EMPTY, EMPTY ],
+      [ EMPTY,    EMPTY,    EMPTY,    EMPTY,    EMPTY, EMPTY ],
+      [ EMPTY,    EMPTY,    EMPTY,    EMPTY,    EMPTY, EMPTY ],
+      [ EMPTY,    EMPTY,    EMPTY,    EMPTY,    EMPTY, EMPTY ],
+    ];
+    expect( gridWinner( grid, 0 ) ).toStrictEqual( PLAYER_2 );
+  });
+
+  test('It should detect a winning row', () => {
+    const grid = [
+      [ PLAYER_2, EMPTY,    EMPTY,    EMPTY, EMPTY, EMPTY ],
+      [ PLAYER_2, EMPTY,    EMPTY,    EMPTY, EMPTY, EMPTY ],
+      [ PLAYER_2, EMPTY,    EMPTY,    EMPTY, EMPTY, EMPTY ],
+      [ PLAYER_2, EMPTY,    EMPTY,    EMPTY, EMPTY, EMPTY ],
+      [ PLAYER_1, PLAYER_1, PLAYER_1, EMPTY, EMPTY, EMPTY ],
+      [ PLAYER_1, EMPTY,    EMPTY,    EMPTY, EMPTY, EMPTY ],
+      [ EMPTY,    EMPTY,    EMPTY,    EMPTY, EMPTY, EMPTY ],
+    ];
+    expect( gridWinner( grid, 0 ) ).toEqual( PLAYER_2 );
+  });
+
+  test('It should detect a winning upward diagonal', () => {
+    const grid = [
+      [ EMPTY,    EMPTY,    EMPTY,    EMPTY,    EMPTY, EMPTY ],
+      [ PLAYER_1, EMPTY,    EMPTY,    EMPTY,    EMPTY, EMPTY ],
+      [ PLAYER_2, PLAYER_1, EMPTY,    EMPTY,    EMPTY, EMPTY ],
+      [ PLAYER_2, PLAYER_2, PLAYER_1, EMPTY,    EMPTY, EMPTY ],
+      [ PLAYER_2, PLAYER_1, PLAYER_2, PLAYER_1, EMPTY, EMPTY ],
+      [ EMPTY,    EMPTY,    EMPTY,    EMPTY,    EMPTY, EMPTY ],
+      [ EMPTY,    EMPTY,    EMPTY,    EMPTY,    EMPTY, EMPTY ],
+    ];
+    expect( gridWinner( grid, 1 ) ).toEqual( PLAYER_1 );
+  });
+
+  test('It should detect a winning downward diagonal', () => {
+    const grid = [
+      [ EMPTY,    EMPTY,    EMPTY,    EMPTY,    EMPTY, EMPTY ],
+      [ EMPTY,    EMPTY,    EMPTY,    EMPTY,    EMPTY, EMPTY ],
+      [ PLAYER_1, PLAYER_2, PLAYER_1, PLAYER_2, EMPTY, EMPTY ],
+      [ PLAYER_1, PLAYER_2, PLAYER_2, EMPTY,    EMPTY, EMPTY ],
+      [ PLAYER_1, PLAYER_2, EMPTY,    EMPTY,    EMPTY, EMPTY ],
+      [ PLAYER_2, EMPTY,    EMPTY,    EMPTY,    EMPTY, EMPTY ],
+      [ EMPTY,    EMPTY,    EMPTY,    EMPTY,    EMPTY, EMPTY ],
+    ];
+    expect( gridWinner( grid, 2 ) ).toEqual( PLAYER_2 );
   });
 
 });
