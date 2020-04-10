@@ -14,6 +14,10 @@
   flex-flow: column nowrap;
   flex-direction: column-reverse;
   padding-top: 20px;
+}
+
+.grid--player-1 .grid__column,
+.grid--player-2 .grid__column {
   cursor: pointer;
 }
 

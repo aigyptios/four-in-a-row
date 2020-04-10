@@ -9,17 +9,18 @@ export class Grid extends React.Component {
 
   handleColumnClick( index ) {
     const column = this.props.grid[ index ];
-    if (column.indexOf( EMPTY ) > -1) {
+    if ( column.indexOf( EMPTY ) > -1 && this.props.winner === EMPTY ) {
       this.props.playMove( index );
     }
   }
 
   render() {
-    const { grid, currentPlayer } = this.props;
+    const { grid, currentPlayer, winner } = this.props;
     return (
-      <div className={( 
+      <div className={(
+        winner === EMPTY ? 
         currentPlayer === PLAYER_1 ? 'grid--player-1' : 
-        currentPlayer === PLAYER_2 ? 'grid--player-2' : 'grid'
+        currentPlayer === PLAYER_2 ? 'grid--player-2' : 'grid' : 'grid'
       )}>
         {
           grid.map(( column, index ) => (
@@ -44,11 +45,12 @@ export class Grid extends React.Component {
 
 const mapStateToProps = ( state ) => ({
   grid: state.grid,
-  currentPlayer: state.currentPlayer
+  currentPlayer: state.currentPlayer,
+  winner: state.winner
 });
 
 const mapDispatchToProps = ( dispatch ) => ({
-  playMove: ( index ) => dispatch( playMove(index ) )
+  playMove: ( index ) => dispatch( playMove( index ) )
 });
 
 export default connect( mapStateToProps, mapDispatchToProps )( Grid );
