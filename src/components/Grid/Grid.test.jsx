@@ -20,7 +20,11 @@ describe('The Grid component', () => {
     const wrapper = shallow(
       <Grid {...props}/>
     );
-    expect( wrapper.find( '.grid--player-1' ).exists() ).toEqual( true );
+    expect( 
+      wrapper.find( '.grid--player-1' ).exists() ||
+      wrapper.find( '.grid--player-2' ).exists() ||
+      wrapper.find( '.grid' ).exists()
+     ).toEqual( true );
   });
 
 });
