@@ -11,13 +11,13 @@ import {
   gridWinner
 } from '../GameUtils';
 
-export const initialState = () => ({
+export const initialState = {
   grid: createNewGrid(),
   currentPlayer: PLAYER_1,
   winner: EMPTY
-})
+};
 
-export const reducer = ( state = initialState(), action ) => {
+export const reducer = ( state = { ...initialState }, action ) => {
   switch( action.type ) {
     case PLAY_MOVE: {
       const { column } = action.payload;
@@ -33,7 +33,7 @@ export const reducer = ( state = initialState(), action ) => {
       };
     }
     case RESET_GAME: {
-      return initialState();
+      return { ...initialState };
     }
     default: {
       return {

@@ -5,18 +5,18 @@ import { PLAYER_1, PLAYER_2, EMPTY } from '../GameUtils';
 describe('The store', () => {
 
   test('The initial state creation function should return an initial state', () => {
-    const state = initialState();
+    const state = { ...initialState };
     expect( state.grid ).toHaveLength(7);
     expect( state.grid[0] ).toHaveLength(6);
     expect( state.currentPlayer ).toEqual( PLAYER_1 );
   });
 
   test('The reducer should return initial state', () => {
-    expect( reducer( undefined, {} ) ).toEqual( initialState() );
+    expect( reducer( undefined, {} ) ).toEqual( { ...initialState } );
   });
 
   test('The reducer should handle \'PLAY_MOVE\' actions on initial state', () => {
-    const stateBefore = initialState();
+    const stateBefore = { ...initialState };
     const column = 2;
     const action = {
       type: PLAY_MOVE,
@@ -31,7 +31,7 @@ describe('The store', () => {
   });
 
   test('The reducer should handle \'PLAY_MOVE\' actions on grid with tokens already on it', () => {
-    const stateBefore = initialState();
+    const stateBefore = { ...initialState };
     const column = 2;
     const action = {
       type: PLAY_MOVE,
@@ -48,7 +48,7 @@ describe('The store', () => {
   });
 
   test('The reducer should handle \'RESET_GAME\' actions', () => {
-    const stateBefore = initialState();
+    const stateBefore = { ...initialState };
     const column = 2;
     const playMoveAction = {
       type: PLAY_MOVE,

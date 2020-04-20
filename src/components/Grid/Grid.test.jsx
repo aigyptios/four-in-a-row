@@ -7,7 +7,7 @@ import { initialState } from '../../redux/store';
 describe('The Grid component', () => {
 
   test('It renders without breaking', () => {
-    const { grid, currentPlayer } = initialState();
+    const { grid, currentPlayer } = { ...initialState };
     const props = { grid, currentPlayer };
     shallow(
       <Grid {...props}/>
@@ -15,7 +15,7 @@ describe('The Grid component', () => {
   });
 
   test('It renders a grid with columns', () => {
-    const { grid, currentPlayer } = initialState();
+    const { grid, currentPlayer } = { ...initialState };
     const props = { grid, currentPlayer };
     const wrapper = shallow(
       <Grid {...props}/>
