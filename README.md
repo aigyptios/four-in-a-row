@@ -15,6 +15,7 @@ The implementation was written in around 4-5 hours (not in one direct sitting). 
 - More code coverage
 - ~~Implement a "game won" detection algorithm~~
 - More mobile friendly
+- Consider refactoring state property `winner` into broader/more robust `gameStatus` 
 
 ---
 
